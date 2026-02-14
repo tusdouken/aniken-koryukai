@@ -3,7 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>大学アニ研交流会（仮称）</title>
+  <title>第一回 大学アニ研交流会 — 2026.3.29(SUN)</title>
+  <meta name="description" content="大学アニメ研究会同士が垣根を越えて、制作過程の工夫や技術的な悩み、失敗談まで語り合える交流イベント。2026年3月29日（日）東京理科大学 神楽坂キャンパスにて開催。">
+  <!-- OGP -->
+  <meta property="og:title" content="第一回 大学アニ研交流会 — 2026.3.29(SUN)">
+  <meta property="og:description" content="上映して終わり、じゃない。プロセスもTipsも、全部シェアしよう。大学アニ研同士の新しい交流の場。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://tusdouken.github.io/aniken-koryukai/">
+  <meta property="og:image" content="https://tusdouken.github.io/aniken-koryukai/og-image.png">
+  <meta property="og:site_name" content="大学アニ研交流会">
+  <meta property="og:locale" content="ja_JP">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="第一回 大学アニ研交流会 — 2026.3.29(SUN)">
+  <meta name="twitter:description" content="上映して終わり、じゃない。プロセスもTipsも、全部シェアしよう。大学アニ研同士の新しい交流の場。">
+  <meta name="twitter:image" content="https://tusdouken.github.io/aniken-koryukai/og-image.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bungee&family=M+PLUS+1:wght@400;500;700;900&display=swap" rel="stylesheet">
@@ -678,6 +692,22 @@
     }
     .grad-btn:hover .arrow{transform:translateX(4px)}
 
+    /* ====== NOTES ====== */
+    .section-notes{padding:80px 0 60px}
+    .notes-list{
+      display:flex;flex-direction:column;gap:12px;
+    }
+    .notes-list li{
+      position:relative;padding-left:24px;
+      font-size:14px;line-height:1.7;color:#555;
+    }
+    .notes-list li::before{
+      content:"";position:absolute;left:0;top:8px;
+      width:8px;height:8px;border-radius:50%;
+      background:linear-gradient(135deg,#ff89ea,#e489ff);
+    }
+    .notes-list li strong{color:#333}
+
     /* ====== Notice ====== */
     .notice-bar{
       text-align:center;padding:12px;
@@ -1086,6 +1116,24 @@
       <!-- 参加団体は随時追加 -->
     </div>
     <p class="circles-note anim">参加団体は随時更新します</p>
+  </div>
+</section>
+
+<!-- ====== NOTES ====== -->
+<section id="anchor-notes" class="section-notes">
+  <div class="sec-title anim">
+    <div class="en font-bg">NOTES</div>
+    <span class="jp">注意事項</span>
+  </div>
+  <div class="section-contents">
+    <ul class="notes-list">
+      <li class="anim"><strong>学生証を必ずご持参ください。</strong>受付時に提示をお願いする場合があります。</li>
+      <li class="anim">会場内での<strong>写真・動画撮影は可能</strong>ですが、発表者の許可なくSNS等へアップロードすることは禁止です。</li>
+      <li class="anim">ブース出展者は<strong>延長コードを持参</strong>してください（1ブースあたり300Wが目安）。</li>
+      <li class="anim">会場内での飲食は可能です。<strong>ゴミは原則お持ち帰り</strong>をお願いします。</li>
+      <li class="anim">貴重品は<strong>各自で管理</strong>してください。紛失・盗難の責任は負いかねます。</li>
+      <li class="anim">イベントの様子を<strong>運営が記録用に撮影</strong>する場合があります。あらかじめご了承ください。</li>
+    </ul>
   </div>
 </section>
 
