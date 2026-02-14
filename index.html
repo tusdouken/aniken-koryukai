@@ -592,22 +592,22 @@
       filter:drop-shadow(0 0 10px #e0cfe0);
     }
     .qanda-item .question{
-      display:flex;gap:10px;align-items:baseline;
+      position:relative;padding-left:38px;
       font-weight:700;line-height:1.4;
     }
     .qanda-item .question::before{
-      content:"Q";flex-shrink:0;
+      content:"Q";position:absolute;left:0;top:0;
       display:flex;justify-content:center;align-items:center;
       width:28px;height:28px;
       font-family:"Bungee",sans-serif;font-size:16px;
       color:#fff;background:#ff89ea;border-radius:6px;
     }
     .qanda-item .answer{
-      display:flex;gap:10px;align-items:baseline;
+      position:relative;padding-left:38px;
       margin-top:10px;font-size:14px;line-height:1.6;color:#555;
     }
     .qanda-item .answer::before{
-      content:"A";flex-shrink:0;
+      content:"A";position:absolute;left:0;top:0;
       display:flex;justify-content:center;align-items:center;
       width:28px;height:28px;
       font-family:"Bungee",sans-serif;font-size:16px;
