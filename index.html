@@ -629,7 +629,7 @@
       transition:transform 0.3s cubic-bezier(0.08,1.32,0.75,1.67);
     }
     .sponsor-item:hover{transform:scale(1.05)}
-    .sponsor-item img{display:block;height:36px;width:auto}
+    .sponsor-item img{display:block;height:60px;width:auto}
     .sponsor-recruit{
       margin-top:32px;text-align:center;
     }
@@ -658,6 +658,9 @@
       background:#333;color:rgba(255,255,255,0.4);
       font-size:12px;
     }
+    .footer-credit{display:inline-block;margin-top:6px;font-size:11px}
+    .footer-credit a{color:rgba(255,255,255,0.5);text-decoration:underline;transition:color 0.2s}
+    .footer-credit a:hover{color:#fff}
 
     /* ====== Responsive ====== */
     @media (max-width:768px){
@@ -1048,7 +1051,8 @@
 
 
 <div class="footer-bottom">
-  &copy; 2026 東京理科大学 動画研究同好会
+  &copy; 2026 東京理科大学 動画研究同好会<br>
+  <span class="footer-credit">Site by <a href="https://tooniq.co.jp" target="_blank" rel="noopener">TOONIQ LLC</a></span>
 </div>
 
 <script>
