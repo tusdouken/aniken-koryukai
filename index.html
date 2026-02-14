@@ -43,59 +43,57 @@
     /* ====== Menu Button ====== */
     .menu-button{
       position:fixed;top:20px;right:20px;
-      width:56px;height:56px;
-      background:#333;border-radius:14px;border:2px solid #fff;
+      width:50px;height:50px;
+      background:linear-gradient(135deg, #ff89ea, #e489ff, #9ce0ff);
+      border-radius:50%;border:none;
       cursor:pointer;z-index:100;
-      filter:drop-shadow(2px 2px 8px rgba(51,51,51,0.3));
+      filter:drop-shadow(0 2px 12px rgba(228,137,255,0.3));
       display:flex;justify-content:center;align-items:center;
+      transition:transform 0.3s cubic-bezier(0.08,1.32,0.75,1.67);
     }
+    .menu-button:hover{transform:scale(1.1)}
     .menu-button::before{
-      content:"";position:absolute;top:50%;left:50%;
-      transform:translate(-50%,-50%);
-      width:calc(100% - 6px);height:calc(100% - 6px);
-      background:linear-gradient(to top, #f9fc96 0%, #b1f3e8 50%, #9ce0ff 100%);
-      border-radius:9px;
+      content:"";position:absolute;
+      width:calc(100% - 4px);height:calc(100% - 4px);
+      background:#fff;border-radius:50%;
     }
-    .menu-lines{position:relative;width:22px;height:18px}
+    .menu-lines{position:relative;width:20px;height:14px;z-index:1}
     .menu-lines span{
-      position:absolute;left:0;width:22px;height:3px;
+      position:absolute;left:0;width:20px;height:2.5px;
       background:#333;border-radius:2px;
-      transition:transform 0.3s;
+      transition:transform 0.3s, opacity 0.2s;
     }
     .menu-lines span:nth-child(1){top:0}
     .menu-lines span:nth-child(2){top:50%;transform:translateY(-50%)}
     .menu-lines span:nth-child(3){bottom:0}
+    .menu-button.open .menu-lines span:nth-child(1){transform:translateY(5.75px) rotate(45deg)}
+    .menu-button.open .menu-lines span:nth-child(2){opacity:0}
+    .menu-button.open .menu-lines span:nth-child(3){transform:translateY(-5.75px) rotate(-45deg)}
 
     /* ====== Nav ====== */
     nav{
-      position:fixed;top:40px;right:40px;
-      width:280px;padding:24px 0 30px;
-      background:#333;border-radius:14px;border:2px solid #fff;
-      filter:drop-shadow(3px 3px 10px rgba(51,51,51,0.4));
+      position:fixed;top:80px;right:20px;
+      width:240px;padding:20px 0;
+      background:#fff;border-radius:16px;
+      filter:drop-shadow(0 0 20px rgba(228,137,255,0.15));
+      border:1.5px solid rgba(228,137,255,0.15);
       opacity:0;pointer-events:none;z-index:99;
-      transform:translateY(30px);
-      transition:opacity 0.3s, transform 0.3s cubic-bezier(0.08,1.32,0.75,1.67);
+      transform:translateY(16px) scale(0.95);
+      transform-origin:top right;
+      transition:opacity 0.25s, transform 0.3s cubic-bezier(0.08,1.32,0.75,1.67);
     }
-    nav::before{
-      content:"";position:absolute;top:50%;left:50%;
-      transform:translate(-50%,-50%);
-      width:calc(100% - 8px);height:calc(100% - 8px);
-      background:linear-gradient(to top, #f9fc96 0%, #b1f3e8 50%, #9ce0ff 100%);
-      border-radius:10px;z-index:-1;
-    }
-    nav.open{opacity:1;pointer-events:auto;transform:translateY(0)}
-    .menu-list{margin:0 24px}
-    .menu-item{font-size:24px;letter-spacing:0.1em;line-height:0.8em}
+    nav.open{opacity:1;pointer-events:auto;transform:translateY(0) scale(1)}
+    .menu-list{margin:0 20px}
+    .menu-item{font-size:20px;letter-spacing:0.08em;line-height:1}
     .menu-item a{
-      display:block;padding:10px 10px;position:relative;z-index:1;
+      display:block;padding:10px 12px;position:relative;
+      color:#333;border-radius:8px;
+      transition:color 0.2s, background 0.2s;
     }
-    .menu-item a::before{
-      content:"";position:absolute;top:0;left:0;
-      background:linear-gradient(to right, #b798ff 0%, #db9ffd 50%, #ff78ce 100%);
-      width:0;height:100%;border-radius:8px;z-index:-1;
-      transition:width 0.3s ease;
+    .menu-item a:hover{
+      color:#e489ff;
+      background:rgba(228,137,255,0.06);
     }
-    .menu-item a:hover::before{width:100%}
 
     /* ====== Common Button ====== */
     .common-button{
