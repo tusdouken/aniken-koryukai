@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>上映作品一覧 — 大学アニ研交流会</title>
+  <title>ブース展示一覧 — 大学アニ研交流会</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bungee&family=M+PLUS+1:wght@400;500;700;900&display=swap" rel="stylesheet">
@@ -57,46 +57,16 @@
       font-size:14px;font-weight:700;color:#e489ff;
     }
 
-    .sc-section{
-      max-width:760px;margin:0 auto;padding:0 20px 60px;
+    .preparing{
+      max-width:760px;margin:0 auto;padding:40px 20px 80px;text-align:center;
     }
-    .sc-list{display:flex;flex-direction:column;gap:24px;margin-top:30px}
-    .sc-card{
-      display:flex;gap:20px;
-      padding:20px;background:#fff;border-radius:10px;
+    .preparing-box{
+      background:#fff;border-radius:10px;padding:60px 30px;
       filter:drop-shadow(0 0 10px #e0cfe0);
     }
-    .sc-thumb{
-      width:180px;height:100px;flex-shrink:0;
-      border-radius:8px;overflow:hidden;
-      background:#f0e8f0;
-    }
-    .sc-thumb img{width:100%;height:100%;object-fit:cover}
-    .sc-body{flex:1;min-width:0}
-    .sc-num{
-      display:inline-block;
-      font-size:11px;font-weight:900;letter-spacing:0.04em;
-      padding:2px 10px;border-radius:4px;
-      background:rgba(228,137,255,0.1);color:#e489ff;
-      margin-bottom:6px;
-    }
-    .sc-title{font-size:18px;font-weight:900;line-height:1.4}
-    .sc-meta{
-      display:flex;gap:12px;margin-top:6px;
-      font-size:12px;color:#999;
-    }
-    .sc-meta span{display:flex;align-items:center;gap:4px}
-    .sc-desc{font-size:14px;color:#555;line-height:1.7;margin-top:8px}
-    .sc-circle{
-      font-size:12px;color:#999;margin-top:8px;
-      padding-top:8px;border-top:1px solid #f0e8f0;
-    }
-    .sc-circle strong{color:#333}
-
-    @media (max-width:768px){
-      .sc-card{flex-direction:column}
-      .sc-thumb{width:100%;height:160px}
-    }
+    .preparing-icon{font-size:48px;margin-bottom:16px}
+    .preparing-title{font-size:20px;font-weight:900;margin-bottom:12px}
+    .preparing-desc{font-size:14px;color:#777;line-height:1.8}
 
     .footer-bottom{
       padding:30px 0;text-align:center;
@@ -111,45 +81,16 @@
 
 <div class="page-header">
   <a href="index.html" class="back"><span class="arrow">←</span><span>トップに戻る</span></a>
-  <h1 class="font-bg">SCREENINGS</h1>
-  <span class="jp">上映作品一覧</span>
+  <h1 class="font-bg">BOOTHS</h1>
+  <span class="jp">ブース展示一覧</span>
 </div>
 
-<div class="sc-section">
-  <div class="sc-list">
-    <div class="sc-card">
-      <div class="sc-thumb"><img src="sc-mitsuzou.png" alt="アニメ☆ミツゾウ大作戦！"></div>
-      <div class="sc-body">
-        <span class="sc-num font-bg">#01</span>
-        <div class="sc-title">アニメ☆ミツゾウ大作戦！</div>
-        <div class="sc-meta">
-          <span>尺：2分</span>
-        </div>
-        <div class="sc-circle"><strong>東京理科大学 動画研究同好会</strong></div>
-      </div>
-    </div>
-    <div class="sc-card">
-      <div class="sc-thumb"><!-- <img src="" alt=""> --></div>
-      <div class="sc-body">
-        <span class="sc-num font-bg">#02</span>
-        <div class="sc-title">鋭意制作中</div>
-        <div class="sc-circle"><strong>東京理科大学 動画研究同好会</strong></div>
-      </div>
-    </div>
-    <div class="sc-card">
-      <div class="sc-thumb"><!-- <img src="" alt=""> --></div>
-      <div class="sc-body">
-        <span class="sc-num font-bg">#03</span>
-        <div class="sc-title">作品タイトル（仮）</div>
-        <div class="sc-meta">
-          <span>尺：--分</span>
-        </div>
-        <div class="sc-desc">作品の説明が入ります。</div>
-        <div class="sc-circle"><strong>サークル名</strong> — 大学名</div>
-      </div>
-    </div>
+<div class="preparing">
+  <div class="preparing-box">
+    <div class="preparing-icon">🎨</div>
+    <div class="preparing-title">準備中</div>
+    <div class="preparing-desc">参加団体の展示内容が決まり次第、順次公開します。<br>お楽しみに！</div>
   </div>
-  <p style="text-align:center;margin-top:30px;font-size:14px;color:#999">随時更新します</p>
 </div>
 
 <div class="footer-bottom">

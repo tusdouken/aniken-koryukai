@@ -26,12 +26,25 @@
       padding:40px 30px 30px;text-align:center;
     }
     .page-header .back{
-      display:inline-block;margin-bottom:20px;
-      padding:8px 20px;background:#333;color:#fff;
-      border-radius:8px;font-size:13px;font-weight:700;
-      transition:transform 0.3s cubic-bezier(0.08,1.32,0.75,1.67);
+      display:inline-flex;align-items:center;gap:8px;
+      margin-bottom:20px;padding:10px 24px;border-radius:50px;
+      font-size:13px;font-weight:700;color:#e489ff;
+      background:#fff;border:2px solid transparent;
+      background-image:linear-gradient(#fff,#fff),linear-gradient(to right,#ff89ea,#e489ff,#9ce0ff);
+      background-origin:border-box;background-clip:padding-box,border-box;
+      position:relative;overflow:hidden;
+      transition:all 0.3s cubic-bezier(0.08,1.32,0.75,1.67);
     }
-    .page-header .back:hover{transform:scale(1.08)}
+    .page-header .back::before{
+      content:"";position:absolute;inset:0;
+      background:linear-gradient(to right,#ff89ea,#e489ff,#9ce0ff);
+      opacity:0;transition:opacity 0.3s;border-radius:50px;
+    }
+    .page-header .back:hover::before{opacity:1}
+    .page-header .back:hover{color:#fff;transform:scale(1.06)}
+    .page-header .back span{position:relative;z-index:1}
+    .page-header .back .arrow{position:relative;z-index:1;transition:transform 0.3s}
+    .page-header .back:hover .arrow{transform:translateX(-4px)}
     .page-header h1{font-size:clamp(32px,6vw,48px);letter-spacing:0.08em}
     .page-header h1::after{
       content:"";display:block;width:120px;height:6px;margin:8px auto 0;
@@ -64,22 +77,28 @@
       font-weight:700;line-height:1.4;
     }
     .qa-item .q::before{
-      content:"Q";position:absolute;left:0;top:0;
+      content:"Q";position:absolute;left:0;top:-2px;
       display:flex;justify-content:center;align-items:center;
-      width:26px;height:26px;
+      width:28px;height:28px;
       font-family:"Bungee",sans-serif;font-size:14px;
-      color:#fff;background:#ff89ea;border-radius:6px;
+      color:#fff;
+      background:linear-gradient(135deg, #ff89ea, #e489ff);
+      border-radius:50%;
+      box-shadow:0 2px 8px rgba(255,137,234,0.3);
     }
     .qa-item .a{
       position:relative;padding-left:36px;
-      margin-top:8px;font-size:14px;line-height:1.6;color:#555;
+      margin-top:14px;font-size:14px;line-height:1.6;color:#555;
     }
     .qa-item .a::before{
-      content:"A";position:absolute;left:0;top:0;
+      content:"A";position:absolute;left:0;top:-2px;
       display:flex;justify-content:center;align-items:center;
-      width:26px;height:26px;
+      width:28px;height:28px;
       font-family:"Bungee",sans-serif;font-size:14px;
-      color:#fff;background:#e489ff;border-radius:6px;
+      color:#e489ff;
+      background:#fff;
+      border:2px solid #e489ff;
+      border-radius:50%;
     }
     .qa-item .a strong{color:#333}
     .qa-item .a ul{margin-top:6px;padding-left:1.2em;list-style:disc}
@@ -94,7 +113,7 @@
 <body>
 
 <div class="page-header">
-  <a href="index.html" class="back">← トップに戻る</a>
+  <a href="index.html" class="back"><span class="arrow">←</span><span>トップに戻る</span></a>
   <h1 class="font-bg">Q&A</h1>
   <span class="jp">よくある質問（随時更新）</span>
 </div>

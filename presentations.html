@@ -27,12 +27,25 @@
       padding:40px 30px 30px;text-align:center;
     }
     .page-header .back{
-      display:inline-block;margin-bottom:20px;
-      padding:8px 20px;background:#333;color:#fff;
-      border-radius:8px;font-size:13px;font-weight:700;
-      transition:transform 0.3s cubic-bezier(0.08,1.32,0.75,1.67);
+      display:inline-flex;align-items:center;gap:8px;
+      margin-bottom:20px;padding:10px 24px;border-radius:50px;
+      font-size:13px;font-weight:700;color:#e489ff;
+      background:#fff;border:2px solid transparent;
+      background-image:linear-gradient(#fff,#fff),linear-gradient(to right,#ff89ea,#e489ff,#9ce0ff);
+      background-origin:border-box;background-clip:padding-box,border-box;
+      position:relative;overflow:hidden;
+      transition:all 0.3s cubic-bezier(0.08,1.32,0.75,1.67);
     }
-    .page-header .back:hover{transform:scale(1.08)}
+    .page-header .back::before{
+      content:"";position:absolute;inset:0;
+      background:linear-gradient(to right,#ff89ea,#e489ff,#9ce0ff);
+      opacity:0;transition:opacity 0.3s;border-radius:50px;
+    }
+    .page-header .back:hover::before{opacity:1}
+    .page-header .back:hover{color:#fff;transform:scale(1.06)}
+    .page-header .back span{position:relative;z-index:1}
+    .page-header .back .arrow{position:relative;z-index:1;transition:transform 0.3s}
+    .page-header .back:hover .arrow{transform:translateX(-4px)}
     .page-header h1{font-size:clamp(32px,6vw,48px);letter-spacing:0.08em}
     .page-header h1::after{
       content:"";display:block;width:120px;height:6px;margin:8px auto 0;
@@ -47,12 +60,13 @@
     .pres-section{
       max-width:760px;margin:0 auto;padding:0 20px 60px;
     }
-    .pres-list{display:flex;flex-direction:column;gap:24px;margin-top:30px}
+    .pres-list{display:flex;flex-direction:column;gap:0;margin-top:30px}
     .pres-card{
       display:flex;gap:24px;
-      padding:24px;background:#fff;border-radius:10px;
-      filter:drop-shadow(0 0 10px #e0cfe0);
+      padding:30px 0;
+      border-bottom:2px solid rgba(228,137,255,0.25);
     }
+    .pres-card:last-child{border-bottom:none}
     .pres-speaker{
       width:160px;flex-shrink:0;text-align:center;
       display:flex;flex-direction:column;justify-content:center;align-items:center;
@@ -97,7 +111,7 @@
 <body>
 
 <div class="page-header">
-  <a href="index.html" class="back">← トップに戻る</a>
+  <a href="index.html" class="back"><span class="arrow">←</span><span>トップに戻る</span></a>
   <h1 class="font-bg">PRESENTATIONS</h1>
   <span class="jp">プレゼン一覧</span>
 </div>
@@ -127,10 +141,11 @@
         <span class="pres-num font-bg">#02</span>
         <div class="pres-title">「アニメ☆ミツゾウ大作戦！」の裏話</div>
         <div class="pres-desc">「大学サークルがアニメ制作会社と一緒に作品を作る」——この無謀な企画がどう実現したのか。企画の裏側、制作会社との交渉秘話、制作中のトラブルまで全部話します。</div>
-        <div class="pres-bio">2003年千葉県生まれ。東京理科大学理学部第一部物理学科在学中。理化学研究所にて量子技術の研究に従事。2025年に合同会社TOONIQを設立し、代表社員を務める。学園祭にてアニメ制作会社・画材店協賛のセル画体験企画を実施するなど、産学連携の取り組みを推進している。</div>
+        <div class="pres-bio">2003年千葉県生まれ。東京理科大学理学部第一部物理学科在学中。コロナ禍で廃部状態だった動画研究同好会を復活させ、活動を再建。2025年に合同会社TOONIQを設立し、代表社員を務める。学園祭にてアニメ制作会社・画材店協賛のセル画体験企画を実施するなど、産学連携の取り組みを推進している。</div>
       </div>
     </div>
   </div>
+  <p style="text-align:center;margin-top:30px;font-size:14px;color:#999">随時更新します</p>
 </div>
 
 <div class="footer-bottom">
