@@ -277,6 +277,34 @@
     .fv .entry-button{
       margin:0 auto;
     }
+
+    .countdown{
+      margin:0 auto;text-align:center;
+    }
+    .countdown-label{
+      font-size:14px;font-weight:700;color:#999;letter-spacing:0.08em;margin-bottom:10px;
+    }
+    .countdown-units{
+      display:flex;align-items:center;justify-content:center;gap:4px;
+    }
+    .cd-unit{
+      display:flex;flex-direction:column;align-items:center;
+      background:rgba(228,137,255,0.08);border-radius:12px;
+      padding:10px 14px;min-width:60px;
+    }
+    .cd-num{
+      font-size:clamp(28px,5vw,40px);font-weight:900;
+      color:#e489ff;line-height:1;
+      font-variant-numeric:tabular-nums;
+    }
+    .cd-txt{
+      font-size:11px;font-weight:700;color:#999;margin-top:4px;letter-spacing:0.05em;
+    }
+    .cd-sep{
+      font-size:clamp(20px,4vw,32px);font-weight:900;color:#e489ff;opacity:0.5;
+      padding:0 2px;align-self:flex-start;margin-top:10px;
+    }
+
     .fv-note{
       margin-top:12px;font-size:13px;color:#999;
     }
@@ -812,7 +840,7 @@
     <li class="menu-item font-bg"><a href="#anchor-contact" class="scroll">CONTACT</a></li>
   </ul>
   <div class="menu-actions">
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfR92XCTTV27hKu4xeZqKY7f3uZ5LFOnAbdTz2ewlhR8DF7tA/viewform?usp=dialog" target="_blank" rel="noopener" class="menu-action-btn primary">参加申し込み</a>
+    <span class="menu-action-btn" style="opacity:0.5;pointer-events:none">参加受付終了</span>
     <a href="mailto:tus_douken@googlegroups.com?subject=%E3%80%90%E5%A4%A7%E5%AD%A6%E3%82%A2%E3%83%8B%E7%A0%94%E4%BA%A4%E6%B5%81%E4%BC%9A%E3%80%91%E3%82%B9%E3%83%9D%E3%83%B3%E3%82%B5%E3%83%BC%E3%81%AE%E3%81%8A%E5%95%8F%E3%81%84%E5%90%88%E3%82%8F%E3%81%9B" class="menu-action-btn">スポンサーのお問い合わせ</a>
   </div>
 </nav>
@@ -837,9 +865,18 @@
     <div class="fv-date font-bg">2026.3.29<span class="week">(SUN)</span></div>
     <p style="display:inline-block;margin:12px 0 0;padding:4px 16px;border-radius:50px;font-size:13px;font-weight:700;letter-spacing:0.04em;color:#e489ff;background:rgba(228,137,255,0.08)">現地・オンライン同時開催</p>
     <p class="fv-sub">作品の裏側を共有しよう。<br>大学アニ研同士の、新しい交流の場。</p>
-    <div class="common-button entry-button"><a href="https://docs.google.com/forms/d/e/1FAIpQLSfR92XCTTV27hKu4xeZqKY7f3uZ5LFOnAbdTz2ewlhR8DF7tA/viewform?usp=dialog" target="_blank" rel="noopener">
-      <p>参加申し込み</p>
-    </a></div>
+    <div class="countdown" id="countdown">
+      <p class="countdown-label">開催まであと</p>
+      <div class="countdown-units">
+        <div class="cd-unit"><span class="cd-num" id="cd-days">--</span><span class="cd-txt">日</span></div>
+        <div class="cd-sep">:</div>
+        <div class="cd-unit"><span class="cd-num" id="cd-hours">--</span><span class="cd-txt">時間</span></div>
+        <div class="cd-sep">:</div>
+        <div class="cd-unit"><span class="cd-num" id="cd-mins">--</span><span class="cd-txt">分</span></div>
+        <div class="cd-sep">:</div>
+        <div class="cd-unit"><span class="cd-num" id="cd-secs">--</span><span class="cd-txt">秒</span></div>
+      </div>
+    </div>
     <p class="fv-note" style="margin-top:16px"><a href="https://x.com/search?q=%23%E5%A4%A7%E5%AD%A6%E3%82%A2%E3%83%8B%E7%A0%94%E4%BA%A4%E6%B5%81%E4%BC%9A" target="_blank" rel="noopener" style="color:#e489ff;font-weight:700">#大学アニ研交流会</a></p>
   </div>
   <div class="fv-scroll font-bg">SCROLL</div>
@@ -986,9 +1023,9 @@
     </ul>
 
     <div class="cta-section anim">
-      <div class="common-button"><a href="https://docs.google.com/forms/d/e/1FAIpQLSfR92XCTTV27hKu4xeZqKY7f3uZ5LFOnAbdTz2ewlhR8DF7tA/viewform?usp=dialog" target="_blank" rel="noopener">
-        <p>参加申し込み</p>
-      </a></div>
+      <div class="common-button" style="opacity:0.5;pointer-events:none">
+        <p>参加受付は終了しました</p>
+      </div>
     </div>
   </div>
 </section>
@@ -1029,19 +1066,20 @@
         <span class="tl-label">事前アンケート</span>
         <span class="tl-badge tl-badge-end font-bg">END</span>
       </div>
-      <div class="tl-item active anim" style="transition-delay:0.35s">
+      <div class="tl-item done anim" style="transition-delay:0.35s">
         <span class="tl-date font-bg">2/1 — 2/28</span>
         <span class="tl-label">参加申し込み</span>
-        <span class="tl-badge tl-badge-now font-bg">NOW</span>
+        <span class="tl-badge tl-badge-end font-bg">END</span>
       </div>
       <div class="tl-item done anim" style="transition-delay:0.5s">
         <span class="tl-date font-bg">2/15</span>
         <span class="tl-label">質問会</span>
         <span class="tl-badge tl-badge-end font-bg">END</span>
       </div>
-      <div class="tl-item anim" style="transition-delay:0.65s">
+      <div class="tl-item done anim" style="transition-delay:0.65s">
         <span class="tl-date font-bg">3/7</span>
         <span class="tl-label">サークルカット締切</span>
+        <span class="tl-badge tl-badge-end font-bg">END</span>
       </div>
       <div class="tl-item anim" style="transition-delay:0.8s">
         <span class="tl-date font-bg">3/24</span>
@@ -1322,6 +1360,26 @@ window.addEventListener('DOMContentLoaded', () => {
   if (fvContent) {
     setTimeout(() => fvContent.classList.add('loaded'), 200);
   }
+
+  // ====== Countdown ======
+  const target = new Date('2026-03-29T11:00:00+09:00').getTime();
+  function updateCD() {
+    const diff = target - Date.now();
+    if (diff <= 0) {
+      document.getElementById('countdown').innerHTML = '<p class="countdown-label" style="font-size:18px;color:#e489ff">開催中！</p>';
+      return;
+    }
+    const d = Math.floor(diff / 86400000);
+    const h = Math.floor((diff % 86400000) / 3600000);
+    const m = Math.floor((diff % 3600000) / 60000);
+    const s = Math.floor((diff % 60000) / 1000);
+    document.getElementById('cd-days').textContent = d;
+    document.getElementById('cd-hours').textContent = String(h).padStart(2,'0');
+    document.getElementById('cd-mins').textContent = String(m).padStart(2,'0');
+    document.getElementById('cd-secs').textContent = String(s).padStart(2,'0');
+  }
+  updateCD();
+  setInterval(updateCD, 1000);
 });
 </script>
 
